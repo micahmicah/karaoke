@@ -1,0 +1,12 @@
+name: RISD
+highlighter: pygments
+safe: true
+markdown: kramdown
+exclude:
+  - "Gemfil*"
+  - "Procfil*"
+  - "*.command"
+  - README.md
+  - "assets/style/scss/*"
+  - "assets/js/src/*"
+baseurl: /web-starter
