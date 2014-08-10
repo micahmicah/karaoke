@@ -81,14 +81,17 @@
         }
 
         function onPlayerStateChange (event) {
-            if (event.data == YT.PlayerState.PAUSED |
-                event.data == YT.PlayerState.BUFFERING) {
+            if (event.data === YT.PlayerState.PAUSED |
+                event.data === YT.PlayerState.BUFFERING) {
                 console.log('change the animation-play-state css property to paused');
                 // http://www.w3schools.com/cssref/css3_pr_animation-play-state.asp
             }
-            if (event.data == YT.PlayerState.PLAYING) {
+            if (event.data === YT.PlayerState.PLAYING) {
                 console.log('change the animation-play-state css property to running');
                 // http://www.w3schools.com/cssref/css3_pr_animation-play-state.asp
+            }
+            if (event.data === YT.PlayerState.ENDED) {
+                player.destroy();
             }
         }
 
