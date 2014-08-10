@@ -12,6 +12,5 @@ $(document).ready(function(){
 $('.video').hover(function(){
 	$('h1').addClass("fade-in");
 	$('.video').addClass("colorize");
-
-})
+});
 },{}]},{},[1])

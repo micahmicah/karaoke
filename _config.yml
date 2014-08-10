@@ -9,4 +9,4 @@ exclude:
   - README.md
   - "assets/style/scss/*"
   - "assets/js/src/*"
-baseurl: /web-starter
+baseurl: /karaoke

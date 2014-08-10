@@ -41,8 +41,56 @@
 <!-- <iframe class="video" width="100%" height="720" src="//www.youtube.com/apiplayer?video_id=oZ6kBdNegfs&version=3&autoplay=1&start=27&modestbranding=1" frameborder="0" allowfullscreen ></iframe> -->
 
 
+        <div id="player"></div>
+        <script>
+        var tag = document.createElement('script');
+        tag.src = "https://www.youtube.com/iframe_api";
+        var firstScriptTag = document.getElementsByTagName('script')[0];
+        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
+        var player;
+        function onYouTubeIframeAPIReady() {
+            player = new YT.Player('player', {
+                width: '100%',
+                height: '720',
+                videoId: 'oZ6kBdNegfs',
+                playerVars: {
+                    fs: 1,
+                    autoplay: 1,
+                    controls: 0
+                },
+                events: {
+                    'onReady': onPlayerReady,
+                    'onStateChange': onPlayerStateChange
+                }
+            });
+        }
 
+        function onPlayerReady (event) {
+            console.log('starting the video playback');
+            event.target.playVideo();
+        }
+
+        function onPlayerStateChange (event) {
+            if (event.data == YT.PlayerState.PAUSED |
+                event.data == YT.PlayerState.BUFFERING) {
+                console.log('change the animation-play-state css property to paused');
+                // http://www.w3schools.com/cssref/css3_pr_animation-play-state.asp
+            }
+            if (event.data == YT.PlayerState.PLAYING) {
+                console.log('change the animation-play-state css property to running');
+                // http://www.w3schools.com/cssref/css3_pr_animation-play-state.asp
+            }
+        }
+
+        function stopVideo () {
+            player.stopVideo();
+        }
+        function playVideo () {
+            player.playVideo();
+        }
+
+        </script>
         <script src="assets/js/dist/site.js"></script>
     </body>
 </html>
