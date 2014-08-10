@@ -7,9 +7,3 @@ $(document).ready(function(){
 	$('h1').lettering();
 
 });
-
-$('.video').hover(function(){
-	$('h1').addClass("fade-in");
-	$('.video').addClass("colorize");
-
-})
