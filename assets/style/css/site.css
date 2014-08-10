@@ -956,8 +956,21 @@ BACKGROUND VIDEO
   overflow: hidden; }
 
 .distorted {
-  -webkit-transform: scale(2.5); }
+  -webkit-transform: scale(2.5);
+  -webkit-animation: distort 2.5s ease-in-out 38s, distort 3.2s ease-in 68s; }
 
+@-webkit-keyframes distort {
+  0% {
+    -webkit-filter: blur(0px) brightness(1) saturate(1) invert(0);
+    -webkit-transform: scale(2.5); }
+
+  50% {
+    -webkit-filter: blur(20px) brightness(2.5) saturate(2) invert(1);
+    -webkit-transform: scale(4); }
+
+  100% {
+    -webkit-filter: blur(0px) brightness(1) saturate(1) invert(0);
+    -webkit-transform: scale(2.5); } }
 /*
 -----------------------------------------
 INVITATION TEXT
