@@ -956,8 +956,7 @@ BACKGROUND VIDEO
   overflow: hidden; }
 
 .distorted {
-  -webkit-transform: scale(2.5);
-  -webkit-animation: distort 2.5s ease-in-out 38s, distort 3.2s ease-in 68s; }
+  -webkit-transform: scale(2.5); }
 
 @-webkit-keyframes distort {
   0% {
